@@ -1,0 +1,166 @@
+---
+layout: default
+---
+<article class="work">
+
+  <header class="work-header">
+    <h1 class="post-title">
+    {% if page.work.writer %}
+    {% for writer in site.data.writers %}
+    {% if page.work.writer == writer.id %}
+    
+    {% if page.work.type == "spurious" %}‘{% endif %}<a href="{{ baseurl }}/writers/{{ page.work.writer }}" class="work-writer">{{ writer.name }}</a>{% if page.work.type == "attributed" %} (attrib.){% elsif page.work.type == "spurious" %}’ (spurious){% endif %},
+    
+    {% endif %}
+      {% endfor %}
+    {% endif %}
+    
+    {% unless page.work.title-description %}<cite>{% endunless %}
+    <span class="work-title"{% unless page.work.title-description %} lang="la"{% endunless %}>{{ page.work.title | markdownify | remove: '<p>' | remove: '</p>' }}</span>
+    {% unless page.work.title-description %}</cite>{% endunless %}
+    {% if page.work.date %}(<span class="work-date">{{ page.work.date }}</span>){% endif %}
+    </h1>
+  </header>
+  
+  <div class="work-content">
+    
+    {% if page.work.alternative-titles %}
+    <h2>Alternative Titles</h2>
+    <ul>
+      {% for title in page.work.alternative-titles %}
+      <li>
+    <cite class="work-alternative-title" lang="la">{{ title }}</cite>
+      </li>
+      {% endfor %}
+    </ul>
+    {% endif %}
+    
+    {% if page.work.incipits %}
+    <h2>Incipit</h2>
+    
+    <ul>
+      {% for incipit in page.work.incipits %}
+      <li>
+    {% if incipit.type %}
+        <em class="work-incipit-type">{{ incipit.type }}</em>:
+        {% endif %}
+        <span class="work-incipit" lang="la">{{ incipit.text }}</span>
+      </li>
+      {% endfor %}
+    </ul>
+    {% endif %}
+    
+    {% if page.work.description %}
+    
+    {% for description in page.work.description %}
+    {{ description | markdownify }}
+    {% endfor %}
+  {% endif %}
+    
+    {% if page.work.editions %}
+    <h2>Editions</h2>
+    <ul>
+    {% for edition in page.work.editions %}
+    <li>
+    {{ edition | markdownify | remove: '<p>' | remove: '</p>' }}
+    </li>
+    {% endfor %}
+    </ul>
+  {% endif %}
+    
+    {% if page.work.bibliography %}
+    <h2>Bibliography</h2>
+    <ul>
+    {% for bibliography in page.work.bibliography %}
+    <li>
+    {{ bibliography | markdownify | remove: '<p>' | remove: '</p>' }}
+    </li>
+    {% endfor %}
+    </ul>
+  {% endif %}
+    
+  {% if page.work.repertories %}
+    <h2>Repertories</h2>
+    <ul>
+    {% for repertory in page.work.repertories %}
+    <li>
+    {% if repertory.BHL %}
+    <a href="https://clavis.brepols.net/clacla/OA/link.aspx?clavis=BHL&amp;number={{ repertory.BHL }}">
+    <cite>Bibliotheca hagiographica Latina</cite> (<cite>BHL</cite>)
+    {{ repertory.BHL }}
+    </a>
+
+    {% elsif repertory.CPL %}
+    <a href="https://clavis.brepols.net/clacla/OA/link.aspx?clavis=CPL&amp;number={{ repertory.CPL }}">
+    <cite>Clavis Patrum Latinorum</cite> (<cite>CPL</cite>)
+    {{ repertory.CPL }}
+    </a>
+
+    {% elsif repertory.ICL %}
+    <a href="http://webserver.erwin-rauner.de/php_ancarm/ancarm_refwerke.php?opus=1001&amp;var=ICL&amp;nr_char={{ repertory.ICL }}">
+    <cite>Initia carminum Latinorum</cite> (<cite>ICL</cite>)
+    {{ repertory.ICL }}
+    </a>
+    
+    {% elsif repertory.WIC %}
+    <a href="http://webserver.erwin-rauner.de/php_ancarm/ancarm_refwerke.php?opus=1000&amp;var=WIC&amp;nr_char={{ repertory.WIC }}">
+    Walther, <cite>Initia carminum</cite> (<cite>WIC</cite>)
+    {{ repertory.WIC }}
+    </a>
+    
+    {% elsif repertory.Chevalier %}
+    <a href="http://webserver.erwin-rauner.de/php_ancarm/ancarm_refwerke.php?opus=1003&amp;var=Chev&amp;nr_char={{ repertory.Chevalier }}">
+    Chevalier
+    {{ repertory.Chevalier }}
+    </a>
+
+    {% elsif repertory.Mirabile %}
+    <a href="https://www.mirabileweb.it/title/-/{{repertory.Mirabile }}">
+    Mirabile title
+    {{repertory.Mirabile }}
+    </a>
+    
+    {% elsif repertory.ThorndikeKibre %}
+    <a href="http://cctr1.umkc.edu/cgi-bin/medievalacademy">
+    Thorndike/Kibre</a>
+    {{ repertory.ThorndikeKibre }}
+        
+    {% else %}
+    {{ repertory }}
+    {% endif %}
+    </li>
+    {% endfor %}
+    </ul>
+    {% endif %}
+    
+  {% if page.work.notes %}
+    <h2>Notes</h2>
+    {% for note in page.work.notes %}
+    {{ note | markdownify }}
+  {% endfor %}
+  {% endif %}
+  
+  {% if page.work.sources %}
+    <h2>Sources</h2>
+    <ul>
+    {% for source in page.work.sources %}
+      <li>
+        {{ source | markdownify | remove: '<p>' | remove: '</p>' }}
+      </li>
+    {% endfor %}
+    </ul>
+  {% endif %}
+
+  {% if page.work.attested-copies %}
+    <h2>Attested Copies</h2>
+    <ul>
+    {% for copy in page.work.attested-copies %}
+      <li>
+        {{ copy | markdownify | remove: '<p>' | remove: '</p>' }}
+      </li>
+    {% endfor %}
+    </ul>
+  {% endif %}
+  </div>
+
+</article>

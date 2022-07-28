@@ -1,0 +1,76 @@
+---
+# Identifiers from https://shortunique.id to distinguish from numbers printed in 1997
+- id: Mcb
+  type: published       # = name in small caps
+  british-career: true  # = marked with ‡
+  name: Abbo of Fleury
+  order: OSB
+  death: 1004           # = date preceded by †
+  description: sometime monk at Ramsey, abbot of Fleury
+  repertories:           # = .sm ... .smz
+    - Kirkstead: K9
+    - BaleIndex: 1
+    - BaleCatalogus: 2. 123
+    - ODNB: 39105
+    - CALMA: 7–8
+    - Mirabile: 19408
+    - Wikidata: Q306658
+  bibliography:
+    - "A. Van de Vyver, 'Les œuvres inédites d'Abbon de Fleury', *RB* 47 (1935) 125–69"
+    - "M. Mostert, *The Political Theology of Abbo of Fleury* (Hilversum 1987)"
+    - "id. 'Le séjour d'Abbon de Fleury à Ramsey', *Bibliothèque de l'École des chartes* 144 (1986) 199–208"
+    - "in *Testi e trasmissioni* 6 (2020), ???"
+  notes:
+    - "Few of Abbo's works were composed in England."
+- id: Twj
+  name: Acca
+  death: 740
+  description: bishop of Hexham
+  repertories:
+    - LelandScriptores: 105–106
+    - BaleIndex: 1–2
+    - BaleCatalogus: 1. 87
+    - Tanner: 2
+    - Wright1: 289–90
+    - ODNB: 55
+    - CALMA: 11
+    - Mirabile: 20493
+    - Wikidata: Q338268
+- id: qO3
+  type: published
+  name: Achard of Saint-Victor
+  order: OSA
+  death: 1171
+  description: abbot of Saint-Victor, later bishop of Avranches
+  repertories:
+    - Kirkstead: K71
+    - BaleIndex: 2
+    - BaleCatalogus: 1. 182
+    - Tanner: 2–3
+    - ODNB: 37093
+    - CALMA: 1. 13–14
+    - Mirabile: 20091
+    - Wikidata: Q2822993
+  notes:
+    - "Kirkstead lists one sermon, 'Super euangelium Ductus est' (K71), to which Bale, *Index*, 2, gave the title 'de Christi tentatione'."
+    - "Two letters of Achard to King Henry II and Arnulf of Lisieux are preserved in one of the contemporary letter-collections from Saint-Victor (*PL* 196. 1381–2; G. Teske, *Die Briefsammlungen des 12. Jahrhunderts in St. Viktor* (Bonn 1993), ???)."
+  bibliography:
+    - "G. Murano, 'Le opere di Acardo di San Vittore (†1170/71)', *RHT* new ser. 5 (2010), 159–73."
+    - "J. Châtillon, *Théologie, spiritualité, et métaphysique dans l'œuvre d'Achard de Saint-Victor. Études d'histoire doctrinale précédées d'un essai sur la vie et l'oeuvre d'Achard* (Paris 1969)."
+- id: lda
+  type: ghost    # = name in quotes
+  name: Adalbert of Spalding
+  repertories:
+    - BaleIndex: 2–3
+    - BaleCatalogus: 1. 205–206
+    - Tanner: 4–5
+    - ODNB: 86
+    - Wikidata: Q4678539
+  notes:
+    "As an English writer, Adalbert of Spalding is a ghost created by Bale out of
+    Leland's recording a copy of the *Speculum Gregorii* at Spalding. The compiler
+    of this common text was Adalbert of Metz († *c*980; *CMA Gallia*, 1. 13–15).
+    Kirkstead, K53, did not make the author an Englishman. Bale, *Index*, 2–3,
+    refers to two copies in private hands besides those recorded at Bury and 
+    Spalding by Kirkstead."
+...
