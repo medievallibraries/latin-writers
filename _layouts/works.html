@@ -9,7 +9,7 @@ layout: default
     {% for writer in site.data.writers %}
     {% if page.work.writer == writer.id %}
     
-    {% if page.work.type == "spurious" %}‘{% endif %}<a href="{{ baseurl }}/writers/{{ page.work.writer }}" class="work-writer">{{ writer.name }}</a>{% if page.work.type == "attributed" %} (attrib.){% elsif page.work.type == "spurious" %}’ (spurious){% endif %},
+    {% if page.work.type == "spurious" %}‘{% endif %}<a href="{{ site.baseurl }}/writers/{{ page.work.writer }}" class="work-writer">{{ writer.name }}</a>{% if page.work.type == "attributed" %} (attrib.){% elsif page.work.type == "spurious" %}’ (spurious){% endif %},
     
     {% endif %}
       {% endfor %}
