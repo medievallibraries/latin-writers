@@ -10,7 +10,7 @@ permalink: /works/
 {% for work in site.data.works %}
 
   <li>
-	<a href="{{ baseurl }}/works/{{ work.id }}">
+	<a href="{{ work.id }}">
       {% for writer in site.data.writers %}
 	  {% if work.writer == writer.id %}
 	  {% if work.type == "spurious" %}‘{% endif %}{{ writer.name }}{% if work.type == "attributed" %} (attrib.){% endif %}{% if work.type == "spurious" %}’ (spurious){% endif %},
