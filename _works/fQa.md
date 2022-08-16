@@ -1,5 +1,5 @@
 ---
-id: fQa
+identifier: fQa
 writer: Mcb
 title: Collectio canonum
 editions:

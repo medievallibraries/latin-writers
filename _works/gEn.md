@@ -1,5 +1,5 @@
 ---
-id: gEn
+identifier: gEn
 writer: Mcb
 title: Excerpta ex Hygino de figuratione signorum
 incipits: 

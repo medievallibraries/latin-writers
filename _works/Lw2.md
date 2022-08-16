@@ -1,5 +1,5 @@
 ---
-id: Lw2
+identifier: Lw2
 writer: Mcb
 title: Sententia de ratione sphaerae
 alternative-titles:

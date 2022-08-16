@@ -1,5 +1,5 @@
 ---
-id: vvW
+identifier: vvW
 writer: Mcb
 title: Computus uulgaris qui dicitur ephemerida
 incipits:

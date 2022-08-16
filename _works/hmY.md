@@ -1,5 +1,5 @@
 ---
-id: hmY
+identifier: hmY
 writer: qO3
 title: De trinitate
 alternative-titles:

@@ -1,7 +1,7 @@
 ---
 # Should spurious works be left as ghosts? or do these need to be merged into main entries?
 # Do any works have more than one spurious attribution from Sharpe?
-id: egw
+identifier: egw
 writer: qO3
 type: spurious
 title: De fide et spe

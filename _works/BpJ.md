@@ -1,5 +1,5 @@
 ---
-id: BpJ
+identifier: BpJ
 writer: Mcb
 title: Epistolae
 editions:

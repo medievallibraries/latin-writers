@@ -1,5 +1,5 @@
 ---
-id: jKK
+identifier: jKK
 writer: Mcb
 title: Syllogismorum cathegoricorum et hypotheticorum enodatio
 editions:

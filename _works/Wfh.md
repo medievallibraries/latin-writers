@@ -1,5 +1,5 @@
 ---
-id: Wfh
+identifier: Wfh
 writer: Mcb
 title: Quaestiones grammaticales
 editions:

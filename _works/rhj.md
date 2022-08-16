@@ -1,5 +1,5 @@
 ---
-id: rhj
+identifier: rhj
 writer: Mcb
 title: Carmen acrostichum ad Ottonem imperatorem
 date-published: 997

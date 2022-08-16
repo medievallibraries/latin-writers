@@ -1,5 +1,5 @@
 ---
-id: gDT
+identifier: gDT
 writer: Mcb
 title: Epistolae de computo
 date-published: 1003–1004

@@ -1,5 +1,5 @@
 ---
-id: KPN
+identifier: KPN
 writer: Mcb
 type: doubtful            # = (?)
 title: Commentary on the Gospels

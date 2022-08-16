@@ -1,5 +1,5 @@
 ---
-id: URR
+identifier: URR
 writer: Mcb
 type: attributed          # = (attrib.)
 title: Carmina acrosticha

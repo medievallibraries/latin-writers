@@ -1,5 +1,5 @@
 ---
-id: wlg
+identifier: wlg
 writer: Mcb
 title: Liber apologeticus
 editions:

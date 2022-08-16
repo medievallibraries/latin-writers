@@ -1,5 +1,5 @@
 ---
-id: JXX
+identifier: JXX
 writer: qO3
 title: De discretione animae spiritus et mentis
 incipits: 

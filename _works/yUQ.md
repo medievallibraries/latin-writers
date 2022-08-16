@@ -1,5 +1,5 @@
 ---
-id: yUQ
+identifier: yUQ
 writer: Mcb
 title: De duplici signorum ortu uel occasu
 notes:

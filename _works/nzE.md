@@ -1,5 +1,5 @@
 ---
-id: nzE
+identifier: nzE
 writer: Mcb
 title: Excerptum de gestis Romanorum pontificum
 description: "an epitome of the *Liber pontificalis*"

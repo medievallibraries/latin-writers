@@ -1,5 +1,5 @@
 ---
-id: lda
+identifier: lda
 type: ghost    # = name in quotes
 title: Adalbert of Spalding
 same-as: https://www.wikidata.org/wiki/Q85511864

@@ -1,5 +1,5 @@
 ---
-id: m6K
+identifier: m6K
 writer: Mcb
 title: Commentary on Victorius of Aquitaine's *Calculus*
 title-description: true

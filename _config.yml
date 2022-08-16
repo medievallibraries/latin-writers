@@ -22,7 +22,7 @@ title: Sharpe’s Latin Writers
 description: >- # this means to ignore newlines until "baseurl:"
   A Handlist of Latin Writers of Great Britain and Ireland Before 1540
 baseurl: "/latin-writers" # the subpath of your site, e.g. /blog
-url: "" # the base hostname & protocol for your site, e.g. http://example.com
+url: "https://medievallibraries.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 lang: en-GB
 
 collections:

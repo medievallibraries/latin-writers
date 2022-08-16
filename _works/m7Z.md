@@ -1,5 +1,5 @@
 ---
-id: m7Z
+identifier: m7Z
 writer: Mcb
 title: Carmina acrosticha ad Dunstanum archiepiscopum
 date-published: 986–7

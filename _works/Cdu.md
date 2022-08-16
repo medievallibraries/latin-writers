@@ -1,5 +1,5 @@
 ---
-id: Cdu
+identifier: Cdu
 writer: Mcb
 title: Passio S. Eadmundi
 description: "dedicated to Archbishop Dunstan"

@@ -1,5 +1,5 @@
 ---
-id: FNJ
+identifier: FNJ
 writer: Mcb
 title: Carmen             # render in italics, unless title-description is true
 incipits:

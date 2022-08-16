@@ -1,5 +1,5 @@
 ---
-id: qO3
+identifier: qO3
 type: published
 title: Achard of Saint-Victor
 order: OSA
