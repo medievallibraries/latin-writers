@@ -7,13 +7,13 @@ permalink: /works/
 
 <ul>
 
-{% for work in site.data.works %}
+{% for work in site.works %}
 
   <li>
-	<a href="{{ work.id }}">
-      {% for writer in site.data.writers %}
+	<a href="{{ work.url | relative_url }}">
+      {% for writer in site.writers %}
 	  {% if work.writer == writer.id %}
-	  {% if work.type == "spurious" %}‘{% endif %}{{ writer.name }}{% if work.type == "attributed" %} (attrib.){% endif %}{% if work.type == "spurious" %}’ (spurious){% endif %},
+	  {% if work.type == "spurious" %}‘{% endif %}{{ writer.title }}{% if work.type == "attributed" %} (attrib.){% endif %}{% if work.type == "spurious" %}’ (spurious){% endif %},
 	  {% endif %}
       {% endfor %}
 	  

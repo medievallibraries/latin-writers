@@ -25,11 +25,38 @@ baseurl: "/latin-writers" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 lang: en-GB
 
+collections:
+  writers:
+    sort_by: title
+    output: true
+    permalink: :collection/:name/
+  works:
+    sort_by: title
+    output: true
+    permalink: :collection/:name/
+
+
+defaults:
+  -
+    scope:
+      type: writers
+    values:
+      layout: writer
+  -
+    scope:
+      type: works
+    values:
+      layout: work
+
 # Build settings
 theme: minima
 plugins:
-  - jekyll-datapage-generator
   - jekyll-seo-tag
+
+# Pages to appear in navigation
+header_pages:
+  - writers.md
+  - works.md
 
 
 # Exclude from processing.
@@ -51,20 +78,3 @@ plugins:
 #   - vendor/cache/
 #   - vendor/gems/
 #   - vendor/ruby/
-
-
-page_gen-dirs: true
-
-page_gen:
-- data: writers
-  name: id
-  title: name
-  page_data_prefix: writer
-- data: works
-  name: id
-  title: title
-  page_data_prefix: work
-
-header_pages:
-  - writers.md
-  - works.md

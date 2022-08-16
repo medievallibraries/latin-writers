@@ -5,29 +5,29 @@ layout: default
 
   <header class="work-header">
     <h1 class="post-title">
-    {% if page.work.writer %}
-    {% for writer in site.data.writers %}
-    {% if page.work.writer == writer.id %}
+    {% if page.writer %}
+    {% for writer in site.writers %}
+    {% if page.writer == writer.id %}
     
-    {% if page.work.type == "spurious" %}‘{% endif %}<a href="{{ site.baseurl }}/writers/{{ page.work.writer }}" class="work-writer">{{ writer.name }}</a>{% if page.work.type == "attributed" %} (attrib.){% elsif page.work.type == "spurious" %}’ (spurious){% endif %},
+    {% if page.type == "spurious" %}‘{% endif %}<a href="{{ page.writer.url | relative_url }}" class="work-writer">{{ writer.title }}</a>{% if page.type == "attributed" %} (attrib.){% elsif page.type == "spurious" %}’ (spurious){% endif %},
     
     {% endif %}
       {% endfor %}
     {% endif %}
     
-    {% unless page.work.title-description %}<cite>{% endunless %}
-    <span class="work-title"{% unless page.work.title-description %} lang="la"{% endunless %}>{{ page.work.title | markdownify | remove: '<p>' | remove: '</p>' }}</span>
-    {% unless page.work.title-description %}</cite>{% endunless %}
-    {% if page.work.date %}(<span class="work-date">{{ page.work.date }}</span>){% endif %}
+    {% unless page.title-description %}<cite>{% endunless %}
+    <span class="work-title"{% unless page.title-description %} lang="la"{% endunless %}>{{ page.title | markdownify | remove: '<p>' | remove: '</p>' }}</span>
+    {% unless page.title-description %}</cite>{% endunless %}
+    {% if page.date-published %}(<span class="work-date">{{ page.date-published }}</span>){% endif %}
     </h1>
   </header>
   
   <div class="work-content">
     
-    {% if page.work.alternative-titles %}
+    {% if page.alternative-titles %}
     <h2>Alternative Titles</h2>
     <ul>
-      {% for title in page.work.alternative-titles %}
+      {% for title in page.alternative-titles %}
       <li>
     <cite class="work-alternative-title" lang="la">{{ title }}</cite>
       </li>
@@ -35,11 +35,11 @@ layout: default
     </ul>
     {% endif %}
     
-    {% if page.work.incipits %}
+    {% if page.incipits %}
     <h2>Incipit</h2>
     
     <ul>
-      {% for incipit in page.work.incipits %}
+      {% for incipit in page.incipits %}
       <li>
     {% if incipit.type %}
         <em class="work-incipit-type">{{ incipit.type }}</em>:
@@ -50,17 +50,17 @@ layout: default
     </ul>
     {% endif %}
     
-    {% if page.work.description %}
+    {% if page.description %}
     
-    {% for description in page.work.description %}
+    {% for description in page.description %}
     {{ description | markdownify }}
     {% endfor %}
   {% endif %}
     
-    {% if page.work.editions %}
+    {% if page.editions %}
     <h2>Editions</h2>
     <ul>
-    {% for edition in page.work.editions %}
+    {% for edition in page.editions %}
     <li>
     {{ edition | markdownify | remove: '<p>' | remove: '</p>' }}
     </li>
@@ -68,10 +68,10 @@ layout: default
     </ul>
   {% endif %}
     
-    {% if page.work.bibliography %}
+    {% if page.bibliography %}
     <h2>Bibliography</h2>
     <ul>
-    {% for bibliography in page.work.bibliography %}
+    {% for bibliography in page.bibliography %}
     <li>
     {{ bibliography | markdownify | remove: '<p>' | remove: '</p>' }}
     </li>
@@ -79,10 +79,10 @@ layout: default
     </ul>
   {% endif %}
     
-  {% if page.work.repertories %}
+  {% if page.repertories %}
     <h2>Repertories</h2>
     <ul>
-    {% for repertory in page.work.repertories %}
+    {% for repertory in page.repertories %}
     <li>
     {% if repertory.BHL %}
     <a href="https://clavis.brepols.net/clacla/OA/link.aspx?clavis=BHL&amp;number={{ repertory.BHL }}">
@@ -133,17 +133,17 @@ layout: default
     </ul>
     {% endif %}
     
-  {% if page.work.notes %}
+  {% if page.notes %}
     <h2>Notes</h2>
-    {% for note in page.work.notes %}
+    {% for note in page.notes %}
     {{ note | markdownify }}
   {% endfor %}
   {% endif %}
   
-  {% if page.work.sources %}
+  {% if page.sources %}
     <h2>Sources</h2>
     <ul>
-    {% for source in page.work.sources %}
+    {% for source in page.sources %}
       <li>
         {{ source | markdownify | remove: '<p>' | remove: '</p>' }}
       </li>
@@ -151,10 +151,10 @@ layout: default
     </ul>
   {% endif %}
 
-  {% if page.work.attested-copies %}
+  {% if page.attested-copies %}
     <h2>Attested Copies</h2>
     <ul>
-    {% for copy in page.work.attested-copies %}
+    {% for copy in page.attested-copies %}
       <li>
         {{ copy | markdownify | remove: '<p>' | remove: '</p>' }}
       </li>

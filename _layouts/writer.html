@@ -5,26 +5,26 @@ layout: default
 
   <header class="writer-header">
     <h1 class="post-title">
-      {% if page.writer.type == "published" %}<span class="smallcaps">{% endif %}
-      {% if page.writer.british-career %}‡{% endif %}{% if page.writer.type == "ghost" %}‘{% endif %}<span class="writer-name">{{ page.writer.name }}</span>{% if page.writer.type == "ghost" %}’{% endif %}{% if page.writer.type == "published" %}</span>{% endif %}{% if page.writer.order %}, <span class="writer-order">{{ page.writer.order }}</span>{% endif %}
-    {% if page.writer.death %}(†<span class="writer-death">{{ page.writer.death }}</span>){% endif %}
+      {% if page.type == "published" %}<span class="smallcaps">{% endif %}
+      {% if page.british-career %}‡{% endif %}{% if page.type == "ghost" %}‘{% endif %}<span class="writer-title">{{ page.title }}</span>{% if page.type == "ghost" %}’{% endif %}{% if page.type == "published" %}</span>{% endif %}{% if page.order %}, <span class="writer-order">{{ page.order }}</span>{% endif %}
+    {% if page.death %}(†<span class="writer-death">{{ page.death }}</span>){% endif %}
     </h1>
   </header>
   
   <div class="writer-content">
   
-    {% if page.writer.type == "ghost" %}
+    {% if page.type == "ghost" %}
     <p>Bibliographical ghost</p>
     {% endif %}
   
-    {% if page.writer.description %}
-    {{ page.writer.description | markdownify }}
+    {% if page.description %}
+    {{ page.description | markdownify }}
     {% endif %}
   
-  	{% if page.writer.repertories %}
+  	{% if page.repertories %}
     <h2>Repertories</h2>
     <ul>
-    {% for repertory in page.writer.repertories %}
+    {% for repertory in page.repertories %}
       <li>
 	    {% if repertory.BaleIndex %}
 		<a href="https://archive.org/details/mmanecdotaoxonie09oxfouoft">
@@ -90,10 +90,10 @@ layout: default
     </ul>
     {% endif %}
 
-    {% if page.writer.bibliography %}
+    {% if page.bibliography %}
     <h2>Bibliography</h2>
     <ul>
-      {% for bibliography in page.writer.bibliography %}
+      {% for bibliography in page.bibliography %}
       <li>
       {{ bibliography | markdownify | remove: '<p>' | remove: '</p>'  }}
       </li>
@@ -101,9 +101,9 @@ layout: default
 	</ul>
 	{% endif %}
 
-    {% if page.writer.notes %}
+    {% if page.notes %}
     <h2>Notes</h2>
-    {% for note in page.writer.notes %}
+    {% for note in page.notes %}
     {{ note | markdownify }}
     {% endfor %}
 	{% endif %}
@@ -112,8 +112,8 @@ layout: default
   <div class="writer-works">
   
   {% assign number_of_works = 0 %}
-  {% for work in site.data.works %}
-    {% if work.writer == page.writer.id and work.type != "spurious" %}
+  {% for work in site.works %}
+    {% if work.writer == page.id and work.type != "spurious" %}
       {% assign number_of_works = number_of_works | plus: 1 %}
     {% endif %}
   {% endfor %}
@@ -123,12 +123,12 @@ layout: default
     <h2>Works</h2>
     
     <ul>
-    {% for work in site.data.works %}
-	{% if work.writer == page.writer.id and work.type != "spurious" %}
+    {% for work in site.works %}
+	{% if work.writer == page.id and work.type != "spurious" %}
       <li>
 	  {% if work.type == "attributed" %}(attrib.){% endif %}
 	  {% unless work.title-description %}<cite>{% endunless %}
-	  <a href="{{ site.baseurl }}/works/{{ work.id }}">{{ work.title | markdownify | remove: '<p>' | remove: '</p>' }}</a>
+	  <a href="{{ work.url | relative_url }}">{{ work.title | markdownify | remove: '<p>' | remove: '</p>' }}</a>
 	  {% unless work.title-description %}</cite>{% endunless %}
       </li>
 	{% endif %}
@@ -138,8 +138,8 @@ layout: default
   
   
   {% assign number_of_spuria = 0 %}
-  {% for work in site.data.works %}
-    {% if work.writer == page.writer.id and work.type == "spurious" %}
+  {% for work in site.works %}
+    {% if work.writer == page.id and work.type == "spurious" %}
       {% assign number_of_spuria = number_of_spuria | plus: 1 %}
     {% endif %}
   {% endfor %}
@@ -148,8 +148,8 @@ layout: default
     <h2>Spurious Attributions</h2>
     
     <ul>
-    {% for work in site.data.works %}
-    {% if work.writer == page.writer.id and work.type == "spurious" %}
+    {% for work in site.works %}
+    {% if work.writer == page.id and work.type == "spurious" %}
       <li>
 	  {% unless work.title-description %}<cite>{% endunless %}
 	  <a href="{{ site.baseurl }}/works/{{ work.id }}">{{ work.title | markdownify | remove: '<p>' | remove: '</p>' }}</a>
