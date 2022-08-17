@@ -18,7 +18,16 @@
       </div>
       <div class="footer-col">
         <h2>Cite this page</h2>
-        <p>Richard Sharpe, <cite>A Handlist of Latin Writers of Great Britain and Ireland Before 1540</cite>, rev. ed. (Oxford, 2022), s.v. ‘{{ page.title }}’, <a href="{{ site.url }}{{ site.baseurl }}{{ page.url }}">{{ site.url }}{{ page.url | relative_url }}</a></p>
+        <p>Richard Sharpe, <cite>A Handlist of Latin Writers of Great Britain and Ireland Before 1540</cite>, rev. ed. (Oxford, 2022),
+          {% if page.type == "writer" %}
+          s.v. ‘{{ page.title }}’,
+          {% endif %}
+          {% if page.type == "work" %}
+          {% assign workWriter = site.writers | where_exp: 'writer', 'writer.identifier == page.writer' %}
+          s.v. ‘{% for writer in workWriter %}{{ writer.title }}{% endfor %}, {% unless work.title-description %}<cite>{% endunless %}{{ page.title }}{% unless work.title-description %}</cite>{% endunless %}’,
+          {% endif %}
+          <a href="{{ site.url }}{{ site.baseurl }}{{ page.url }}">{{ site.url }}{{ page.url | relative_url }}</a></p>
+          <p>Site updated {{ page.date | date_to_long_string }}.</p>
       </div>
     </div>
 
