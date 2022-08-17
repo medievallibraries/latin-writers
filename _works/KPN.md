@@ -4,6 +4,8 @@ writer: Mcb
 subtype: doubtful            # = (?)
 title: Commentary on the Gospels
 title-description: true   # set on titles not in italics
+repertories:
+  - Mirabile: 131829
 notes:
   "Not known to survive."
 attested-copies:

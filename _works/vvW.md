@@ -12,6 +12,7 @@ incipits:
 repertories:      # missing in original
   - ICL: 1006
   - WIC: 1448
+  - Mirabile: 23027
 editions:
   - "prologue, table, and explanation were printed by Iohannes Noviomagus in *Bedae opuscula complura de temporum ratione* (Cologne 1537) and reprinted among other matter by J. Herwagen in 1563, and from there in *PL* 90"
   - "according to Van der Vyver, 150, Abbo's text is found at col.  727–42, 749–58, 787–820, 212–30 (*sic*), 823–6, 859–78, 855–8"

@@ -10,6 +10,7 @@ editions:
   - "Baker & Lapidge<!--,  PAGES ??? -->."
 repertories:
   - ThorndikeKibre: 1530, 370
+  - Mirabile: 14920
 sources:
   - "Baltimore, Walters Art Gallery, MS W. 73 (s. xii², England), fols. 5v–6r, 4r–v."
   - "Cambridge, St John's College, MS 221 (s. xii), pp. 284–290."

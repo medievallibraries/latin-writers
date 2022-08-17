@@ -6,6 +6,8 @@ alternative-titles:
   - De unitate diuinae essentiae et pluralitate creaturarum
 editions:
   - "E. Martineau (Saint-Lambert-des-Bois 1987)."
+repertories:
+  - Mirabile: 1913
 bibliography:
   - "The work was first identified by M.-T. d'Alverny, *RTAM* 21 (1954) 299–306."
 notes: 

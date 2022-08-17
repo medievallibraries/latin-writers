@@ -6,6 +6,8 @@ notes:
   "an additional note on some points in his *Sententia de ratione sphaerae*"
 editions:
   - "R. B. Thomson, 'Further astronomical material of Abbo of Fleury', *Mediaeval Studies* 50 (1988) 671–3 (text, 673)."
+repertories:
+  - Mirabile: 23402
 sources:
   - "Cambridge, St John's College, MS 221 (s. xii), pp. 290–291."
   - "Cambridge, Trinity College, MS R. 15. 32 (s. x/xi, ?Winchester; later St Augustine's), fol. 7r–v."

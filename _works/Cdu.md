@@ -10,6 +10,7 @@ bibliography:
   - "On the circulation of the text, see A. Gransden, 'Abbo of Fleury's *Passio sancti Eadmundi*', *RB* 105 (1995) 20–78."
 repertories:
    - BHL: 2392
+   - Mirabile: 351
 sources:
   - "Angers, Bibliothèque municipale, MS 121 (s. xi/xii), fols. 246r–248v."
   - "Cambridge, Corpus Christi College, MS 42 (s. xii), fols. 19r–25v."

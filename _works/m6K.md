@@ -5,6 +5,8 @@ title: Commentary on Victorius of Aquitaine's *Calculus*
 title-description: true
 editions:
   - "ed. A. M. Peden, Auctores Britannici medii aevi 15 (2002)"
+repertories:
+  - Mirabile: 5321
 bibliography: 
   - "G. R. Evans & A. M. Peden, 'Natural science and the liberal arts in Abbo of Fleury's Commentary on the Calculus of Victorius of Aquitaine', *Viator* 16 (1985) 109–127"
   - "E.-M. Engelen, *Zeit, Zahl, und Bild: Studien zur Verbindung von Philosophie und Wissenschaft bei Abbo von Fleury* (Berlin 1993)"

@@ -7,6 +7,7 @@ incipits:
 editions: unpr.
 repertories:
   - ThorndikeKibre: 400
+  - Mirabile: 23023
 sources:
   - "Brussels, Bibliothèque Royale, MS 2194–5 (cat. 1355) (s. xii), fols. 49v–52r"
   - "Cambridge, Trinity College, MS R. 15. 32 (s. x/xi, ?Winchester; later St Augustine's), pp. 200–208."
