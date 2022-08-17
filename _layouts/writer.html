@@ -7,80 +7,80 @@ layout: default
     <h1 class="post-title">
       {% if page.type == "published" %}<span class="smallcaps">{% endif %}
       {% if page.british-career %}‡{% endif %}{% if page.type == "ghost" %}‘{% endif %}<span class="writer-title">{{ page.title }}</span>{% if page.type == "ghost" %}’{% endif %}{% if page.type == "published" %}</span>{% endif %}{% if page.order %}, <span class="writer-order">{{ page.order }}</span>{% endif %}
-    {% if page.death %}(†<span class="writer-death">{{ page.death }}</span>){% endif %}
+      {% if page.death %}(†<span class="writer-death">{{ page.death }}</span>){% endif %}
     </h1>
   </header>
   
   <div class="writer-content">
   
     {% if page.type == "ghost" %}
-    <p>Bibliographical ghost</p>
+    <p>bibliographical ghost</p>
     {% endif %}
   
     {% if page.description %}
     {{ page.description | markdownify }}
     {% endif %}
   
-  	{% if page.repertories %}
+    {% if page.repertories %}
     <h2>Repertories</h2>
     <ul>
     {% for repertory in page.repertories %}
       <li>
-	    {% if repertory.BaleIndex %}
-		<a href="https://archive.org/details/mmanecdotaoxonie09oxfouoft">
-		Bale, <cite>Index</cite></a>,
-		{{ repertory.BaleIndex }}
-		
-		{% elsif repertory.BaleCatalogus %}
-		<a href="https://catalog.hathitrust.org/Record/010824840">
-		Bale, <cite>Catalogus</cite></a>,
-		{{ repertory.BaleCatalogus }}
-		
-		{% elsif repertory.CALMA %}
-		<a href="https://www.mirabileweb.it">
-		<cite>CALMA</cite></a>,
-		{{ repertory.CALMA }}
-		
+        {% if repertory.BaleIndex %}
+        <a href="https://archive.org/details/mmanecdotaoxonie09oxfouoft">
+        Bale, <cite>Index</cite></a>,
+        {{ repertory.BaleIndex }}
+        
+        {% elsif repertory.BaleCatalogus %}
+        <a href="https://catalog.hathitrust.org/Record/010824840">
+        Bale, <cite>Catalogus</cite></a>,
+        {{ repertory.BaleCatalogus }}
+    
+        {% elsif repertory.CALMA %}
+        <a href="https://www.mirabileweb.it">
+        <cite>CALMA</cite></a>,
+        {{ repertory.CALMA }}
+        
         {% elsif repertory.Kirkstead %}
-	    <a href="http://mlgb3.bodleian.ox.ac.uk/authortitle/medieval_catalogues/{{ repertory.Kirkstead }}">
-	    Kirkstead,
+        <a href="http://mlgb3.bodleian.ox.ac.uk/authortitle/medieval_catalogues/{{ repertory.Kirkstead }}">
+        Kirkstead,
         {{ repertory.Kirkstead }}
         </a>
-		
-		{% elsif repertory.LelandScriptores %}
-		<a href="https://catalog.hathitrust.org/Record/001169077"><!-- check book -->
-		Leland, <cite>Scriptores</cite></a>,
-		{{ repertory.LelandScriptores }}
+        
+        {% elsif repertory.LelandScriptores %}
+        <a href="https://catalog.hathitrust.org/Record/001169077"><!-- check book -->
+        Leland, <cite>Scriptores</cite></a>,
+        {{ repertory.LelandScriptores }}
 
-		{% elsif repertory.Mirabile %}
-		<a href="https://www.mirabileweb.it/author/-/{{repertory.Mirabile }}">
-		Mirabile
-		</a>
-		
-		{% elsif repertory.ODNB %}
-		<a href="https://doi.org/10.1093/ref:odnb/{{repertory.ODNB}}">
-		<cite>Oxford Dictionary of National Biography</cite>
-		</a>     
-		
-		{% elsif repertory.Tanner %}
-		<a href="https://archive.org/details/BibliothecaBritannicoHibernicaTanner">
-		Tanner</a>,
-		{{ repertory.Tanner }}
-		
-		{% elsif repertory.Wikidata %}
-		<a href="https://www.wikidata.org/wiki/{{repertory.Wikidata }}">
-		Wikidata
-		</a>
-		
-		{% elsif repertory.Wright1 %}
-		<a href="https://archive.org/details/biographiabritan01wriguoft">
-		Wright</a>, 1.
-		{{ repertory.Wright1 }}
-		
-		{% elsif repertory.Wright2 %}
-		<a href="https://archive.org/details/biographiabritan02wriguoft">
-		Wright</a>, 2.
-		{{ repertory.Wright2 }}
+        {% elsif repertory.Mirabile %}
+        <a href="https://www.mirabileweb.it/author/-/{{repertory.Mirabile }}">
+        Mirabile
+        </a>
+    
+        {% elsif repertory.ODNB %}
+        <a href="https://doi.org/10.1093/ref:odnb/{{repertory.ODNB}}">
+        <cite>Oxford Dictionary of National Biography</cite>
+        </a>     
+    
+        {% elsif repertory.Tanner %}
+        <a href="https://archive.org/details/BibliothecaBritannicoHibernicaTanner">
+        Tanner</a>,
+        {{ repertory.Tanner }}
+    
+        {% elsif repertory.Wikidata %}
+        <a href="https://www.wikidata.org/wiki/{{repertory.Wikidata }}">
+        Wikidata
+        </a>
+    
+        {% elsif repertory.Wright1 %}
+        <a href="https://archive.org/details/biographiabritan01wriguoft">
+        Wright</a>, 1.
+        {{ repertory.Wright1 }}
+    
+        {% elsif repertory.Wright2 %}
+        <a href="https://archive.org/details/biographiabritan02wriguoft">
+        Wright</a>, 2.
+        {{ repertory.Wright2 }}
         
         {% else %}
         {{ repertory | markdownify | remove: '<p>' | remove: '</p>' }}
@@ -97,65 +97,67 @@ layout: default
       <li>
       {{ bibliography | markdownify | remove: '<p>' | remove: '</p>'  }}
       </li>
-	{% endfor %}
-	</ul>
-	{% endif %}
+    {% endfor %}
+    </ul>
+    {% endif %}
 
     {% if page.notes %}
     <h2>Notes</h2>
     {% for note in page.notes %}
     {{ note | markdownify }}
     {% endfor %}
-	{% endif %}
+  {% endif %}
   </div>
   
   <div class="writer-works">
-  
-  {% assign writerWorks = site.works | where_exp: 'work', 'work.writer == page.identifier' %}
-  
-  {% assign number_of_works = 0 %}
-  {% for work in writerWorks %}
-    {% assign number_of_works = number_of_works | plus: 1 %}
-  {% endfor %}
-  {% if number_of_works == 0 %}
+
+    {% assign writerWorks = site.works | where_exp: 'work', 'work.writer == page.identifier' %}
+
+    {% assign number_of_works = 0 %}
+    {% for work in writerWorks %}
+    {% if work.type != "spurious" %}
+      {% assign number_of_works = number_of_works | plus: 1 %}
+    {% endif %}
+    {% endfor %}
+    {% if number_of_works == 0 %}
     <!-- no works -->
-  {% else %}
+    {% else %}
     <h2>Works</h2>
     
     <ul>
     {% for work in writerWorks %}
-	{% if work.type != "spurious" %}
+    {% if work.type != "spurious" %}
       <li>
-	  {% if work.type == "attributed" %}(attrib.){% endif %}
-	  {% unless work.title-description %}<cite>{% endunless %}
-	  <a href="{{ work.url | relative_url }}">{{ work.title | markdownify | remove: '<p>' | remove: '</p>' }}</a>
-	  {% unless work.title-description %}</cite>{% endunless %}
+        {% if work.type == "attributed" %}(attrib.){% endif %}
+        {% unless work.title-description %}<cite>{% endunless %}
+        <a href="{{ work.url | relative_url }}">{{ work.title | markdownify | remove: '<p>' | remove: '</p>' }}</a>
+        {% unless work.title-description %}</cite>{% endunless %}
       </li>
-	{% endif %}
+    {% endif %}
     {% endfor %}
     </ul>
-  {% endif %}
-  
-  
-  {% assign number_of_spuria = 0 %}
-  {% for work in writerWorks %}
-    {% if work.type == "spurious" %}
-      {% assign number_of_spuria = number_of_spuria | plus: 1 %}
     {% endif %}
-  {% endfor %}
-  {% if number_of_spuria == 0 %}
-  {% else %}
+  
+  
+    {% assign number_of_spuria = 0 %}
+    {% for work in writerWorks %}
+      {% if work.type == "spurious" %}
+        {% assign number_of_spuria = number_of_spuria | plus: 1 %}
+      {% endif %}
+    {% endfor %}
+    {% if number_of_spuria == 0 %}
+    {% else %}
     <h2>Spurious Attributions</h2>
     
     <ul>
     {% for work in writerWorks %}
     {% if work.type == "spurious" %}
       <li>
-	  {% unless work.title-description %}<cite>{% endunless %}
-	  <a href="{{ work.url | relative_url }}">{{ work.title | markdownify | remove: '<p>' | remove: '</p>' }}</a>
-	  {% unless work.title-description %}</cite>{% endunless %}
+        {% unless work.title-description %}<cite>{% endunless %}
+        <a href="{{ work.url | relative_url }}">{{ work.title | markdownify | remove: '<p>' | remove: '</p>' }}</a>
+        {% unless work.title-description %}</cite>{% endunless %}
       </li>
-	{% endif %}
+    {% endif %}
     {% endfor %}
     </ul>
   {% endif %}
