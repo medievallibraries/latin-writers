@@ -1,0 +1,29 @@
+---
+layout: none
+---
+[
+  {%- for work in site.works %}
+    {
+      "identifier": {{- work.identifier | jsonify }}
+      "writer": {{- work.writer | jsonify }}
+      "title": {{- work.title | jsonify }}
+      "title-description": {{- work.title-description | jsonify }}
+      "subtype": {{- work.subtype | jsonify }}
+      "description": {{- work.description | jsonify }}
+      "date-published": {{- work.date-published | jsonify }}
+      "alternative-titles": {{- work.alternative-titles | jsonify }}
+      "incipits": {{- work.incipits | jsonify }}
+      "editions": {{- work.editions | jsonify }}
+      "bibliography": {{- work.bibliography | jsonify }}
+      "repertories": {{- work.repertories | jsonify }}
+      "notes": {{- work.notes | jsonify }}
+      "sources": {{- work.sources | jsonify }}
+      "attested-copies": {{- work.attested-copies | jsonify }}
+    }
+    {% unless forloop.last %},{% endunless %}
+  {% endfor -%}
+]
+
+
+
+

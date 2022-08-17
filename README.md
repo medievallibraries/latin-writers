@@ -95,3 +95,5 @@ attested-copies:    # free-form citations
 ## Rendering
 
 A static site generator, [Jekyll](https://jekyllrb.com), uses templates to present the data in a more readable form. It reads the YAML data files using its [Collections](https://jekyllrb.com/docs/collections/) feature, effectively replacing a live relational database. [Liquid filters](https://jekyllrb.com/docs/liquid/filters/) enables cross references between datasets.
+
+The datasets are also made available as single JSON files; see [Jekyll: how to build a REST API](https://gist.github.com/MichaelCurrin/f8d908596276bdbb2044f04c352cb7c7).

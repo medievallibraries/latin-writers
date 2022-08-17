@@ -23,3 +23,5 @@ permalink: /works/
   </li>
 {% endfor %}
 </ul>
+
+<a href="{{ site.baseurl }}/api/works.json">Download work data in JSON format</a>

@@ -19,3 +19,5 @@ permalink: /writers/
   </li>
 {% endfor %}
 </ul>
+
+<a href="{{ site.baseurl }}/api/writers.json">Download writer data in JSON format</a>

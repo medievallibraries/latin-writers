@@ -1,0 +1,21 @@
+---
+layout: none
+---
+[
+  {%- for writer in site.writers %}
+    {
+      "identifier": {{- writer.identifier | jsonify }}
+      "title": {{- writer.title | jsonify }}
+      "order": {{- writer.order | jsonify }}
+      "subtype": {{- writer.subtype | jsonify }}
+      "not-british": {{- writer.not-british | jsonify }}
+      "british-career": {{- writer.british-career | jsonify }}
+      "death": {{- writer.death | jsonify }}
+      "description": {{- writer.description | jsonify }}
+      "repertories": {{- writer.repertories | jsonify }}
+      "bibliography": {{- writer.bibliography | jsonify }}
+      "notes": {{- writer.notes | jsonify }}
+    }
+    {% unless forloop.last %},{% endunless %}
+  {% endfor -%}
+]
