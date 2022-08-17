@@ -10,7 +10,7 @@ notes:
 editions:
   - "J. Mabillon, *Acta SS. ordinis S. Benedicti* (Paris 1668–1701), 8. 49–50, repr. *PL* 139. 519–20"
   - "K. Strecker, MGH *PLAC* 5 (1937–9) 470."
-  - "For an edition that reconstructs the acrostic, see S. J. Gwara, 'Three acrostic poems by Abbo of Fleury', *JML* 2 (1992) 203–235 (at 227–31)."
+  - "For an edition that reconstructs the acrostic, see S. J. Gwara, '[Three acrostic poems by Abbo of Fleury](https://doi.org/10.1484/j.jml.2.303977)', *JML* 2 (1992) 203–235 (at 227–31)."
 repertories:
   - ICL: 11514
 sources:

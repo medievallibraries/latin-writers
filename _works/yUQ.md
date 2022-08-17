@@ -5,7 +5,7 @@ title: De duplici signorum ortu uel occasu
 notes:
   "an additional note on some points in his *Sententia de ratione sphaerae*"
 editions:
-  - "R. B. Thomson, 'Further astronomical material of Abbo of Fleury', *Mediaeval Studies* 50 (1988) 671–3 (text, 673)."
+  - "R. B. Thomson, '[Further astronomical material of Abbo of Fleury](https://doi.org/10.1484/J.MS.2.306676)', *Mediaeval Studies* 50 (1988) 671–3 (text, 673)."
 repertories:
   - Mirabile: 23402
 sources:

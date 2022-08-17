@@ -10,7 +10,7 @@ repertories:
 bibliography: 
   - "G. R. Evans & A. M. Peden, 'Natural science and the liberal arts in Abbo of Fleury's Commentary on the Calculus of Victorius of Aquitaine', *Viator* 16 (1985) 109–127"
   - "E.-M. Engelen, *Zeit, Zahl, und Bild: Studien zur Verbindung von Philosophie und Wissenschaft bei Abbo von Fleury* (Berlin 1993)"
-  - "M. Huglo, 'D'Helisacher à Abbon de Fleury', *RB* 104 (1994) 204–230 (at 220–25)"
+  - "M. Huglo, '[D'Helisachar à Abbon de Fleury](https://doi.org/10.1484/j.rb.4.01312)', *RB* 104 (1994) 204–230 (at 220–25)"
 sources:
   - "Bamberg, Staatsbibliothek, MS HJ IV. 24 (Class. 53) (s. x/xi), fols. 10r–(??)."
   - "SBB – PK MS 138 (Phillipps 1833) (s. xᵉˣ, Fleury), fols. 5r–(22) [author's copy]."

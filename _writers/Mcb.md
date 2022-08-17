@@ -15,10 +15,10 @@ repertories:           # = .sm ... .smz
   - Mirabile: 19408
   - Wikidata: Q306658
 bibliography:
-  - "A. Van de Vyver, 'Les œuvres inédites d'Abbon de Fleury', *RB* 47 (1935) 125–69"
+  - "A. Van de Vyver, '[Les œuvres inédites d'Abbon de Fleury](https://doi.org/10.1484/j.rb.4.02020)', *RB* 47 (1935) 125–69"
   - "M. Mostert, *The Political Theology of Abbo of Fleury* (Hilversum 1987)"
-  - "id. 'Le séjour d'Abbon de Fleury à Ramsey', *Bibliothèque de l'École des chartes* 144 (1986) 199–208"
-  - "in *Testi e trasmissioni* 6 (2020), ???"
+  - "id. '[Le séjour d'Abbon de Fleury à Ramsey](https://doi.org/10.3406/bec.1986.450415)', *Bibliothèque de l'École des chartes* 144 (1986) 199–208"
+  - "in *Testi e trasmissioni* 6 (2019), ???"
 notes:
   - "Few of Abbo's works were composed in England."
 ---

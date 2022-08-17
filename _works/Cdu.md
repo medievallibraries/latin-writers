@@ -7,7 +7,7 @@ editions:
   - "T. Arnold, *Memorials of St Edmund's abbey*, RS 96 (1890–96), 1. 1–25 [using only copies in English libraries]"
   - "M. Winterbottom, *Three Lives of English Saints*, TMLT 1 (1972), 67–87 [from MS Cotton Tiberius B. <span class=\"smallcaps\">ii</span>]."
 bibliography:
-  - "On the circulation of the text, see A. Gransden, 'Abbo of Fleury's *Passio sancti Eadmundi*', *RB* 105 (1995) 20–78."
+  - "On the circulation of the text, see A. Gransden, '[Abbo of Fleury's *Passio sancti Eadmundi*](https://doi.org/10.1484/j.rb.4.01339)', *RB* 105 (1995) 20–78."
 repertories:
    - BHL: 2392
    - Mirabile: 351

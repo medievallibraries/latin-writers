@@ -9,7 +9,7 @@ incipits:
 description:
   "quoted in Byrhtferth's *Vita S. Oswaldi*"
 editions:
-  - "S. J. Gwara, 'Three acrostic poems by Abbo of Fleury', *JML* 2 (1992) 203–235 (at 215–26)."
+  - "S. J. Gwara, '[Three acrostic poems by Abbo of Fleury](https://doi.org/10.1484/j.jml.2.303977)', *JML* 2 (1992) 203–235 (at 215–26)."
 repertories:
    - ICL: 15822
    - ICL: 10987
