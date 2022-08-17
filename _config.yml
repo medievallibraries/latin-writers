@@ -58,6 +58,7 @@ defaults:
 theme: minima
 plugins:
   - jekyll-seo-tag
+  - jekyll-sitemap
 
 # Pages to appear in navigation
 header_pages:
