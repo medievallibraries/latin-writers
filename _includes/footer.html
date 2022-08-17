@@ -27,7 +27,10 @@
           s.v. ‘{% for writer in workWriter %}{{ writer.title }}{% endfor %}, {% unless work.title-description %}<cite>{% endunless %}{{ page.title }}{% unless work.title-description %}</cite>{% endunless %}’,
           {% endif %}
           <a href="{{ site.url }}{{ site.baseurl }}{{ page.url }}">{{ site.url }}{{ page.url | relative_url }}</a></p>
+          
+          {% if page.date %}
           <p>Site updated {{ page.date | date_to_long_string }}.</p>
+          {% endif %}
       </div>
     </div>
 
