@@ -29,11 +29,11 @@ collections:
   writers:
     sort_by: title
     output: true
-    permalink: :collection/:name/
+    permalink: :collection/:title/
   works:
     sort_by: title
     output: true
-    permalink: :collection/:name/
+    permalink: :collection/:title/
 
 
 defaults:
