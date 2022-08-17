@@ -6,12 +6,11 @@ layout: default
   <header class="work-header">
     <h1 class="post-title">
     {% if page.writer %}
-    {% for writer in site.writers %}
-    {% if page.writer == writer.identifier %}
+    {% assign workWriter = site.writers | where_exp: 'writer', 'writer.identifier == page.writer' %}
+    {% for writer in workWriter %}
     
-    {% if page.type == "spurious" %}‘{% endif %}<a href="{{ page.writer.url | relative_url }}" class="work-writer">{{ writer.title }}</a>{% if page.type == "attributed" %} (attrib.){% elsif page.type == "spurious" %}’ (spurious){% endif %},
+    {% if page.type == "spurious" %}‘{% endif %}<a href="{{ site.baseurl }}/writers/{{ writer.identifier }}" class="work-writer">{{ writer.title }}</a>{% if page.type == "attributed" %} (attrib.){% elsif page.type == "spurious" %}’ (spurious){% endif %},
     
-    {% endif %}
       {% endfor %}
     {% endif %}
     

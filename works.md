@@ -11,10 +11,9 @@ permalink: /works/
 
   <li>
 	<a href="{{ work.url | relative_url }}">
-      {% for writer in site.writers %}
-	  {% if work.writer == writer.identifier %}
+    {% assign workWriter = site.writers | where_exp: 'writer', 'writer.identifier == work.writer' %}
+      {% for writer in workWriter %}
 	  {% if work.type == "spurious" %}‘{% endif %}{{ writer.title }}{% if work.type == "attributed" %} (attrib.){% endif %}{% if work.type == "spurious" %}’ (spurious){% endif %},
-	  {% endif %}
       {% endfor %}
 	  
 	  {% unless work.title-description %}<cite>{% endunless %}

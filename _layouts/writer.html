@@ -111,11 +111,11 @@ layout: default
   
   <div class="writer-works">
   
+  {% assign writerWorks = site.works | where_exp: 'work', 'work.writer == page.identifier' %}
+  
   {% assign number_of_works = 0 %}
-  {% for work in site.works %}
-    {% if work.writer == page.identifier and work.type != "spurious" %}
-      {% assign number_of_works = number_of_works | plus: 1 %}
-    {% endif %}
+  {% for work in writerWorks %}
+    {% assign number_of_works = number_of_works | plus: 1 %}
   {% endfor %}
   {% if number_of_works == 0 %}
     <!-- no works -->
@@ -123,8 +123,8 @@ layout: default
     <h2>Works</h2>
     
     <ul>
-    {% for work in site.works %}
-	{% if work.writer == page.identifier and work.type != "spurious" %}
+    {% for work in writerWorks %}
+	{% if work.type != "spurious" %}
       <li>
 	  {% if work.type == "attributed" %}(attrib.){% endif %}
 	  {% unless work.title-description %}<cite>{% endunless %}
@@ -138,8 +138,8 @@ layout: default
   
   
   {% assign number_of_spuria = 0 %}
-  {% for work in site.works %}
-    {% if work.writer == page.identifier and work.type == "spurious" %}
+  {% for work in writerWorks %}
+    {% if work.type == "spurious" %}
       {% assign number_of_spuria = number_of_spuria | plus: 1 %}
     {% endif %}
   {% endfor %}
@@ -148,8 +148,8 @@ layout: default
     <h2>Spurious Attributions</h2>
     
     <ul>
-    {% for work in site.works %}
-    {% if work.writer == page.identifier and work.type == "spurious" %}
+    {% for work in writerWorks %}
+    {% if work.type == "spurious" %}
       <li>
 	  {% unless work.title-description %}<cite>{% endunless %}
 	  <a href="{{ work.url | relative_url }}">{{ work.title | markdownify | remove: '<p>' | remove: '</p>' }}</a>

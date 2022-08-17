@@ -94,4 +94,4 @@ attested-copies:    # free-form citations
 
 ## Rendering
 
-A static site generator, [Jekyll](https://jekyllrb.com), uses templates to present the data in a more readable form. It reads the YAML data files using its [Collections feature](https://jekyllrb.com/docs/collections/). The technique of using cross references between collections is based on a '[Jekyll Author Pages](https://jetholt.com/micro/jekyll-author-pages/)' tutorial.
+A static site generator, [Jekyll](https://jekyllrb.com), uses templates to present the data in a more readable form. It reads the YAML data files using its [Collections](https://jekyllrb.com/docs/collections/) feature, effectively replacing a live relational database. [Liquid filters](https://jekyllrb.com/docs/liquid/filters/) enables cross references between datasets.
