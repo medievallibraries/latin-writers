@@ -8,11 +8,11 @@ permalink: /writers/
 {% for writer in site.writers %}
   <li>
     <a href="{{ writer.url | relative_url }}">
-      {% if writer.type == "published" %}
+      {% if writer.subtype == "published" %}
         <span class="smallcaps">
       {% endif %}
         {{ writer.title }}
-      {% if writer.type == "published" %}
+      {% if writer.subtype == "published" %}
         </span>
       {% endif %}
     </a>

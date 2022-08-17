@@ -13,7 +13,7 @@ permalink: /works/
   <a href="{{ work.url | relative_url }}">
     {% assign workWriter = site.writers | where_exp: 'writer', 'writer.identifier == work.writer' %}
     {% for writer in workWriter %}
-      {% if work.type == "spurious" %}‘{% endif %}{{ writer.title }}{% if work.type == "attributed" %} (attrib.){% endif %}{% if work.type == "spurious" %}’ (spurious){% endif %},
+      {% if work.subtype == "spurious" %}‘{% endif %}{{ writer.title }}{% if work.subtype == "attributed" %} (attrib.){% endif %}{% if work.subtype == "spurious" %}’ (spurious){% endif %},
     {% endfor %}
     
     {% unless work.title-description %}<cite>{% endunless %}

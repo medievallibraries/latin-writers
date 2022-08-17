@@ -3,7 +3,7 @@
 # Do any works have more than one spurious attribution from Sharpe?
 identifier: egw
 writer: qO3
-type: spurious
+subtype: spurious
 title: De fide et spe
 notes:
   "so attributed in a copy at Christ Church (BC4. 76);

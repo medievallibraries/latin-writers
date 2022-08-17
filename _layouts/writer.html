@@ -5,15 +5,15 @@ layout: default
 
   <header class="writer-header">
     <h1 class="post-title">
-      {% if page.type == "published" %}<span class="smallcaps">{% endif %}
-      {% if page.british-career %}‡{% endif %}{% if page.type == "ghost" %}‘{% endif %}<span class="writer-title">{{ page.title }}</span>{% if page.type == "ghost" %}’{% endif %}{% if page.type == "published" %}</span>{% endif %}{% if page.order %}, <span class="writer-order">{{ page.order }}</span>{% endif %}
+      {% if page.subtype == "published" %}<span class="smallcaps">{% endif %}
+      {% if page.british-career %}‡{% endif %}{% if page.subtype == "ghost" %}‘{% endif %}<span class="writer-title">{{ page.title }}</span>{% if page.subtype == "ghost" %}’{% endif %}{% if page.subtype == "published" %}</span>{% endif %}{% if page.order %}, <span class="writer-order">{{ page.order }}</span>{% endif %}
       {% if page.death %}(†<span class="writer-death">{{ page.death }}</span>){% endif %}
     </h1>
   </header>
   
   <div class="writer-content">
   
-    {% if page.type == "ghost" %}
+    {% if page.subtype == "ghost" %}
     <p>bibliographical ghost</p>
     {% endif %}
   
@@ -115,7 +115,7 @@ layout: default
 
     {% assign number_of_works = 0 %}
     {% for work in writerWorks %}
-    {% if work.type != "spurious" %}
+    {% if work.subtype != "spurious" %}
       {% assign number_of_works = number_of_works | plus: 1 %}
     {% endif %}
     {% endfor %}
@@ -126,9 +126,9 @@ layout: default
     
     <ul>
     {% for work in writerWorks %}
-    {% if work.type != "spurious" %}
+    {% if work.subtype != "spurious" %}
       <li>
-        {% if work.type == "attributed" %}(attrib.){% endif %}
+        {% if work.subtype == "attributed" %}(attrib.){% endif %}
         {% unless work.title-description %}<cite>{% endunless %}
         <a href="{{ work.url | relative_url }}">{{ work.title | markdownify | remove: '<p>' | remove: '</p>' }}</a>
         {% unless work.title-description %}</cite>{% endunless %}
@@ -141,7 +141,7 @@ layout: default
   
     {% assign number_of_spuria = 0 %}
     {% for work in writerWorks %}
-      {% if work.type == "spurious" %}
+      {% if work.subtype == "spurious" %}
         {% assign number_of_spuria = number_of_spuria | plus: 1 %}
       {% endif %}
     {% endfor %}
@@ -151,7 +151,7 @@ layout: default
     
     <ul>
     {% for work in writerWorks %}
-    {% if work.type == "spurious" %}
+    {% if work.subtype == "spurious" %}
       <li>
         {% unless work.title-description %}<cite>{% endunless %}
         <a href="{{ work.url | relative_url }}">{{ work.title | markdownify | remove: '<p>' | remove: '</p>' }}</a>

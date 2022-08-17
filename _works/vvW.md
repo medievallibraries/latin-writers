@@ -4,11 +4,11 @@ writer: Mcb
 title: Computus uulgaris qui dicitur ephemerida
 incipits:
   - text: Quadratus hic aequilaterus qui dicitur tetragonus
-    type: prologue
+    subtype: prologue
   - text: Ardua conexae libat sacraria formae
-    type: verse table
+    subtype: verse table
   - text: Ephemeris est supputatio singulorum dierum aut siderum subtilis inspectio. Hic sunt triginta senarii
-    type: exposition
+    subtype: exposition
 repertories:      # missing in original
   - ICL: 1006
   - WIC: 1448

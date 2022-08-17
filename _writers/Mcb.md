@@ -1,6 +1,6 @@
 ---
 identifier: Mcb
-type: published       # = name in small caps, i.e. a person whose works circulated in the Middle Ages under their name
+subtype: published       # = name in small caps, i.e. a person whose works circulated in the Middle Ages under their name
 british-career: true  # = marked with ‡, i.e. person not born in British Isles but active there
 title: Abbo of Fleury
 order: OSB

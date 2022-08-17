@@ -17,7 +17,7 @@ The data files are readable in any plain text editor. The data is structured in 
 identifier:    # unique identifier created using https://shortunique.id
 title:         # writer's name
 order:         # abbreviation for religious order (OSB, OSA, etc.)
-type:          # 'published' for a person whose works circulated in the Middle Ages under their name, rendered in small caps
+subtype:          # 'published' for a person whose works circulated in the Middle Ages under their name, rendered in small caps
                # 'ghost' for bibliographical ghosts, rendered in quotes
 not-british: true     # = for a writer mistakenly thought in the past to have British connections, marked †
 british-career: true  # = for a writer not born in British Isles but active there, marked ‡
@@ -52,7 +52,7 @@ identifier:          # unique identifier created using https://shortunique.id
 writer:              # identifer for the attributed writer
 title:               # work's name, assumed to be in Latin
 title-description:   # for an English descriptive name, rendered without italics
-type:                # 'attributed' for likely attributions to a writer, marked '(attrib.)'
+subtype:                # 'attributed' for likely attributions to a writer, marked '(attrib.)'
                      # 'spurious' for disproven attributions to a writer, rendered in quotes
 description:   # short label shown before references
 date-published:      # date (not structured)

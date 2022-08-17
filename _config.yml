@@ -41,11 +41,13 @@ defaults:
     scope:
       type: writers
     values:
+      type: writer
       layout: writer
   -
     scope:
       type: works
     values:
+      type: work
       layout: work
 
 # Build settings

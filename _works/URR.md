@@ -1,7 +1,7 @@
 ---
 identifier: URR
 writer: Mcb
-type: attributed          # = (attrib.)
+subtype: attributed          # = (attrib.)
 title: Carmina acrosticha
 description: 
   "serving as prologue and epilogue to Hyginus, *Astronomica*"

@@ -1,7 +1,7 @@
 ---
 identifier: KPN
 writer: Mcb
-type: doubtful            # = (?)
+subtype: doubtful            # = (?)
 title: Commentary on the Gospels
 title-description: true   # set on titles not in italics
 notes:

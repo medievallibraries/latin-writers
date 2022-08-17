@@ -1,6 +1,6 @@
 ---
 identifier: qO3
-type: published
+subtype: published
 title: Achard of Saint-Victor
 order: OSA
 death: 1171
