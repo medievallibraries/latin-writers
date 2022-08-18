@@ -15,6 +15,7 @@ The original data files and presentation templates are in the [site's GitHub rep
 
 The full datasets are also available for download:
 
-- <a href="{{ site.baseurl }}/api/works.json">Download work data in JSON format</a>
-- <a href="{{ site.baseurl }}/api/writers.json">Download writer data in JSON format</a>
-- <a href="{{ site.baseurl }}/api/writers.xml">Download writer data in TEI XML format</a>
+- [Download work data in JSON format]({{ site.baseurl }}/api/works.json)
+- [Download work data in TEI XML format]({{ site.baseurl }}/api/works.xml)
+- [Download writer data in JSON format]({{ site.baseurl }}/api/writers.json)
+- [Download writer data in TEI XML format]({{ site.baseurl }}/api/writers.xml)

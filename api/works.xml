@@ -1,0 +1,188 @@
+---
+layout: none
+---
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:lang="en-GB">
+   <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title>Sharpe’s Latin Writers</title>
+            <title type="sub">Works</title>
+            <respStmt>
+               <resp from="1995" to="2020">author</resp>
+               <persName>Richard Sharpe</persName>
+            </respStmt>
+            <respStmt>
+               <resp from="2022">editor</resp>
+               <persName>Andrew Dunning</persName>
+            </respStmt>
+         </titleStmt>
+         <publicationStmt>
+            <publisher>University of Oxford</publisher>
+         </publicationStmt>
+         <sourceDesc>
+            <biblStruct type="book">
+               <monogr>
+                  <title level="m">A handlist of the Latin writers of Great Britain and Ireland before 1540</title>
+                  <idno type="ISBN">978-2-503-50575-6</idno>
+                  <author>
+                     <forename>Richard</forename>
+                     <surname>Sharpe</surname>
+                  </author>
+                  <imprint>
+                     <pubPlace>Turnhout</pubPlace>
+                     <publisher>Brepols</publisher>
+                     <date>1997</date>
+                  </imprint>
+               </monogr>
+               <series>
+                  <title level="s">Publications of the <title>Journal of Medieval Latin</title></title>
+                  <biblScope unit="volume">1</biblScope>
+               </series>
+            </biblStruct>
+         </sourceDesc>
+      </fileDesc>
+   </teiHeader>
+   <text>
+      <body>
+         <listBibl>
+            {%- if work.writer %}
+            {%- assign workWriter = site.writers | where_exp: 'writer', 'writer.identifier == work.writer' %}
+            {%- for writer in workWriter %}
+            <author ref="{{ site.baseurl }}/writers/{{ writer.identifier }}"{%- if work.subtype == "attributed" %} cert="medium"{% elsif work.subtype == "spurious" %} cert="low"{% endif -%}>
+               {{- writer.title -}}
+            </author>
+            {%- endfor %}
+            {%- endif %}
+            
+            {%- for work in site.works %}
+            <bibl xml:id="{{ work.identifier }}">
+               <title{%- if work.title-description %} type="desc"{% else %} xml:lang="la"{% endif -%}>
+                  {{ work.title | markdownify | remove: '<p>' | remove: '</p>' | replace: "<em>", "<title>" | replace: "</em>", "</title>" | replace: "<a href", "<ref target" | replace: "</a>", "</ref>" | replace: "<span class", "<hi rend" | replace: "</span>", "</hi>" -}}
+               </title>
+               <textLang mainLang="la"/>
+               
+               {%- if work.date-published %}
+               <date>{{ work.date-published }}</date>
+               {% endif -%}
+               
+               {%- if work.alternative-titles %}
+               {%- for title in work.alternative-titles %}
+               <title type="alt" xml:lang="la">{{ title }}</title>
+               {% endfor -%}
+               {% endif -%}
+               
+               {%- if work.incipits %}
+               {%- for incipit in work.incipits %}
+               <incipit xml:lang="la"{%- if incipit.type %} type="{{ incipit.type }}"{% endif -%}>{{ incipit.text }}</incipit>
+                  {% endfor -%}
+                  {% endif -%}
+                  
+               {%- if work.description %}
+               {%- for description in work.description %}
+                  <note type="description">{{ description | markdownify | remove: '<p>' | remove: '</p>' | replace: "<em>", "<title>" | replace: "</em>", "</title>" | replace: "<a href", "<ref target" | replace: "</a>", "</ref>" | replace: "<span class", "<hi rend" | replace: "</span>", "</hi>" }}</note>
+               {% endfor -%}
+               {% endif -%}
+               
+               {%- if work.editions %}
+                  <note type="editions">
+                  {%- for edition in work.editions %}
+                  <bibl>
+                     {{ edition | markdownify | remove: '<p>' | remove: '</p>' | replace: "<em>", "<title>" | replace: "</em>", "</title>" | replace: "<a href", "<ref target" | replace: "</a>", "</ref>" | replace: "<span class", "<hi rend" | replace: "</span>", "</hi>" }}
+                  </bibl>
+                  {% endfor -%}
+                  </note>
+               {% endif -%}
+               
+               {%- if work.bibliography %}
+                  <note type="bibliography">
+                  {%- for bibliography in work.bibliography %}
+                  <bibl>
+                     {{ bibliography | markdownify | remove: '<p>' | remove: '</p>' | replace: "<em>", "<title>" | replace: "</em>", "</title>" | replace: "<a href", "<ref target" | replace: "</a>", "</ref>" | replace: "<span class", "<hi rend" | replace: "</span>", "</hi>" }}
+                  </bibl>
+                  {% endfor -%}
+                  </note>
+               {% endif -%}
+               
+               {%- if work.repertories %}
+                  <note type="repertories">
+                  {%- for repertory in work.repertories %}
+                  {%- if repertory.BHL %}
+                  <bibl type="BHL"><ref target="https://clavis.brepols.net/clacla/OA/link.aspx?clavis=BHL&amp;number={{ repertory.BHL }}">
+                     <title>Bibliotheca hagiographica Latina</title> (<title>BHL</title>)
+                     <idno>{{ repertory.BHL }}</idno>
+                  </ref></bibl>
+                  
+                  {% elsif repertory.CPL %}
+                  <bibl type="CPL"><ref target="https://clavis.brepols.net/clacla/OA/link.aspx?clavis=CPL&amp;number={{ repertory.CPL }}">
+                     <title>Clavis Patrum Latinorum</title> (<title>CPL</title>)
+                     <idno>{{ repertory.CPL }}</idno>
+                  </ref></bibl>
+                  
+                  {% elsif repertory.ICL %}
+                  <bibl type="ICL"><ref target="http://webserver.erwin-rauner.de/php_ancarm/ancarm_refwerke.php?opus=1001&amp;var=ICL&amp;nr_char={{ repertory.ICL }}">
+                     <title>Initia carminum Latinorum</title> (<title>ICL</title>)
+                     <idno>{{ repertory.ICL }}</idno>
+                  </ref></bibl>
+                  
+                  {% elsif repertory.WIC %}
+                  <bibl type="WIC"><ref target="http://webserver.erwin-rauner.de/php_ancarm/ancarm_refwerke.php?opus=1000&amp;var=WIC&amp;nr_char={{ repertory.WIC }}">
+                     Walther, <title>Initia carminum</title> (<title>WIC</title>)
+                     <idno>{{ repertory.WIC }}</idno>
+                  </ref></bibl>
+                  
+                  {% elsif repertory.Chevalier %}
+                  <bibl type="Chevalier"><ref target="http://webserver.erwin-rauner.de/php_ancarm/ancarm_refwerke.php?opus=1003&amp;var=Chev&amp;nr_char={{ repertory.Chevalier }}">
+                     Chevalier
+                     <idno>{{ repertory.Chevalier }}</idno>
+                  </ref></bibl>
+                  
+                  {% elsif repertory.Mirabile %}
+                  <bibl type="MirabileTitle"><ref target="https://www.mirabileweb.it/title/-/{{repertory.Mirabile }}">
+                     Mirabile, title
+                     <idno>{{repertory.Mirabile }}</idno>
+                  </ref></bibl>
+                  
+                  {% elsif repertory.ThorndikeKibre %}
+                  <bibl type="ThorndikeKibre"><ref target="http://cctr1.umkc.edu/cgi-bin/medievalacademy">
+                     Thorndike/Kibre</ref>
+                     <idno>{{ repertory.ThorndikeKibre }}</idno>
+                  </bibl>
+                  
+                  {% else %}
+                  <bibl>{{ repertory }}</bibl>
+                  {% endif -%}
+                  {% endfor -%}
+                  </note>
+               {% endif -%}
+               
+               
+               {%- if work.notes %}
+               {%- for note in work.notes %}
+                  <note>{{ note | markdownify | remove: '<p>' | remove: '</p>' | replace: "<em>", "<title>" | replace: "</em>", "</title>" | replace: "<a href", "<ref target" | replace: "</a>", "</ref>" | replace: "<span class", "<hi rend" | replace: "</span>", "</hi>" }}</note>
+               {% endfor -%}
+               {% endif -%}
+               
+               {%- if work.sources %}
+               <note type="sources">
+                  {%- for source in work.sources %}
+                  <bibl>{{ source | markdownify | remove: '<p>' | remove: '</p>' | replace: "<em>", "<title>" | replace: "</em>", "</title>" | replace: "<a href", "<ref target" | replace: "</a>", "</ref>" | replace: "<span class", "<hi rend" | replace: "</span>", "</hi>" }}</bibl>
+                  {% endfor -%}
+               </note>
+               {% endif -%}
+               
+               {%- if work.attested-copies %}
+                  <note type="attested">
+                  {%- for copy in work.attested-copies %}
+                  <bibl>{{ copy | markdownify | remove: '<p>' | remove: '</p>' | replace: "<em>", "<title>" | replace: "</em>", "</title>" | replace: "<a href", "<ref target" | replace: "</a>", "</ref>" | replace: "<span class", "<hi rend" | replace: "</span>", "</hi>" }}</bibl>
+                  {% endfor -%}
+                  </note>
+               {% endif -%}
+            </bibl>
+            {%- endfor %}
+         </listBibl>
+      </body>
+   </text>
+</TEI>
