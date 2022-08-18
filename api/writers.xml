@@ -1,0 +1,161 @@
+---
+layout: none
+---
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+   <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title>Sharpe’s Latin Writers</title>
+            <respStmt>
+               <resp from="1995" to="2020">author</resp>
+               <persName>Richard Sharpe</persName>
+            </respStmt>
+            <respStmt>
+               <resp from="2022">editor</resp>
+               <persName>Andrew Dunning</persName>
+            </respStmt>
+         </titleStmt>
+         <publicationStmt>
+            <publisher>University of Oxford</publisher>
+         </publicationStmt>
+         <sourceDesc>
+            <biblStruct type="book">
+               <monogr>
+                  <title level="m">A handlist of the Latin writers of Great Britain and Ireland before 1540</title>
+                  <idno type="ISBN">978-2-503-50575-6</idno>
+                  <author>
+                     <forename>Richard</forename>
+                     <surname>Sharpe</surname>
+                  </author>
+                  <imprint>
+                     <pubPlace>Turnhout</pubPlace>
+                     <publisher>Brepols</publisher>
+                     <date>1997</date>
+                  </imprint>
+               </monogr>
+               <series>
+                  <title level="s">Publications of the <title>Journal of Medieval Latin</title></title>
+                  <biblScope unit="volume">1</biblScope>
+               </series>
+            </biblStruct>
+         </sourceDesc>
+      </fileDesc>
+   </teiHeader>
+   <text>
+      <body>
+         <listPerson>
+            {%- for writer in site.writers %}
+            <person xml:id="{{ writer.identifier }}" {% if writer.subtype or writer.british-career or writer.non-british %}role="{{ writer.subtype }}{% if writer.british-career %} BritishCareer{% endif %}{% if writer.non-british %} NonBritish{% endif %}"{%- endif %}>
+               <persName>{{ writer.title }}</persName>
+               {%- if writer.death %}
+               <death>{{ writer.death }}</death>
+               {%- endif %}
+               {%- if writer.order %}
+               <affiliation>{{ writer.order }}</affiliation>
+               {%- endif %}
+               {%- if writer.description %}
+               <occupation>{{ writer.description }}</occupation>
+               {%- endif %}
+               {%- if writer.repertories %}
+               <listBibl type="repertories">
+                  {%- for repertory in writer.repertories %}
+                     {%- if repertory.BaleIndex %}
+                  <bibl type="BaleIndex"><ref target="https://archive.org/details/mmanecdotaoxonie09oxfouoft">
+                        Bale, <title>Index</title></ref>
+                  <citedRange>{{ repertory.BaleIndex }}</citedRange>
+                  </bibl>
+                     
+                     {%- elsif repertory.BaleCatalogus %}
+                  <bibl type="BaleCatalogus"><ref target="https://catalog.hathitrust.org/Record/010824840">
+                        Bale, <title>Catalogus</title></ref>,
+                     <citedRange>{{ repertory.BaleCatalogus }}</citedRange>
+                  </bibl>
+                     
+                     {%- elsif repertory.CALMA %}
+                     <bibl type="CALMA"><ref target="https://www.mirabileweb.it">
+                        <title>CALMA</title></ref>,
+                     <citedRange>{{ repertory.CALMA }}</citedRange>
+                     </bibl>
+                     
+                     {%- elsif repertory.Kirkstead %}
+                  <bibl type="Kirkstead"><ref target="http://mlgb3.bodleian.ox.ac.uk/authortitle/medieval_catalogues/{{ repertory.Kirkstead }}">
+                     Kirkstead,
+                        <idno>{{ repertory.Kirkstead }}</idno>
+                     </ref>
+                  </bibl>
+                     
+                     {%- elsif repertory.LelandScriptores %}
+                  <bibl type="LelandScriptores"><ref target="https://catalog.hathitrust.org/Record/001169077">
+                        Leland, <title>Scriptores</title></ref>,
+                     <citedRange>{{ repertory.LelandScriptores }}</citedRange>
+                  </bibl>
+                     
+                     {%- elsif repertory.Mirabile %}
+                  <bibl type="MirabileAuthor"><ref target="https://www.mirabileweb.it/author/-/{{repertory.Mirabile }}">
+                     Mirabile, author
+                     <idno>{{repertory.Mirabile }}</idno></ref>
+                     </bibl>
+                     
+                     {%- elsif repertory.ODNB %}
+                  <bibl type="ODNB"><ref target="https://doi.org/10.1093/ref:odnb/{{repertory.ODNB}}">
+                        <title>Oxford Dictionary of National Biography</title>
+                     <idno>{{repertory.ODNB}}</idno></ref>
+                     </bibl>     
+                     
+                     {%- elsif repertory.Tanner %}
+                  <bibl type="Tanner"><ref target="https://archive.org/details/BibliothecaBritannicoHibernicaTanner">
+                        Tanner</ref>,
+                     <citedRange>{{ repertory.Tanner }}</citedRange>
+                  </bibl>
+                     
+                     {%- elsif repertory.Wikidata %}
+                  <bibl type="Wikidata"><ref target="https://www.wikidata.org/wiki/{{repertory.Wikidata }}">
+                        Wikidata
+                     <idno>{{repertory.Wikidata }}</idno></ref>
+                  </bibl>
+                     
+                     {%- elsif repertory.Wright1 %}
+                  <bibl type="Wright1"><ref target="https://archive.org/details/biographiabritan01wriguoft">
+                        Wright</ref>, 1.
+                     <citedRange>{{ repertory.Wright1 }}</citedRange>
+                  </bibl>
+                     
+                     {%- elsif repertory.Wright2 %}
+                     <bibl type="Wright2"><ref target="https://archive.org/details/biographiabritan02wriguoft">
+                        Wright</ref>, 2.
+                     <citedRange>{{ repertory.Wright2 }}</citedRange>
+                     </bibl>
+                     
+                     {%- else %}
+                     {{ repertory | markdownify | remove: '<p>' | remove: '</p>' }}
+                     {%- endif %}
+                  {%- endfor %}
+               </listBibl>
+               {%- endif %}
+               
+               
+               {%- if writer.bibliography %}
+               <listBibl type="bibliography">
+                  {%- for entry in writer.bibliography %}
+                  <bibl>{{ entry | markdownify | remove: '<p>' | remove: '</p>' | replace: "<em>", "<title>" | replace: "</em>", "</title>" | replace: "<a href", "<ref target" | replace: "</a>", "</ref>" }}</bibl>
+                  {%- endfor %}
+               </listBibl>
+               
+               
+               {%- if writer.notes %}
+               {%- for note in writer.notes %}
+               <note>{{ note | markdownify | remove: '<p>' | remove: '</p>' | replace: "<em>", "<title>" | replace: "</em>", "</title>" | replace: "<a href", "<ref target" | replace: "</a>", "</ref>" }}</note>
+               {%- endfor %}
+               {%- endif %}
+               
+               
+               {%- endif %}
+            </person>
+            {%- endfor %}
+         </listPerson>
+      </body>
+   </text>
+</TEI>
