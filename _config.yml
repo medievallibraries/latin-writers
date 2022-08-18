@@ -52,7 +52,7 @@ defaults:
       type: work
       layout: work
       seo:
-        type: CreativeWork
+        type: Book
 
 # Build settings
 theme: minima
