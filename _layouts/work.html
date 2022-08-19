@@ -22,9 +22,13 @@ layout: default
   </header>
   
   <div class="work-content">
+
+    {% if page.sameAs %}
+    <p>= <a href="{{ page.sameAs.url }}">{{ page.sameAs.label | markdownify | remove: '<p>' | remove: '</p>' }}</a></p>
+    {% endif %}
     
     {% if page.alternative-titles %}
-    <h2>Alternative Titles</h2>
+    <h2>Alternative titles</h2>
     <ul>
       {% for title in page.alternative-titles %}
       <li>
@@ -50,11 +54,10 @@ layout: default
     {% endif %}
     
     {% if page.description %}
-    
     {% for description in page.description %}
     {{ description | markdownify }}
     {% endfor %}
-  {% endif %}
+    {% endif %}
     
     {% if page.editions %}
     <h2>Editions</h2>
@@ -65,7 +68,7 @@ layout: default
     </li>
     {% endfor %}
     </ul>
-  {% endif %}
+    {% endif %}
     
     {% if page.bibliography %}
     <h2>Bibliography</h2>
@@ -76,9 +79,9 @@ layout: default
     </li>
     {% endfor %}
     </ul>
-  {% endif %}
+    {% endif %}
     
-  {% if page.repertories %}
+    {% if page.repertories %}
     <h2>Repertories</h2>
     <ul>
     {% for repertory in page.repertories %}
@@ -132,14 +135,14 @@ layout: default
     </ul>
     {% endif %}
     
-  {% if page.notes %}
+    {% if page.notes %}
     <h2>Notes</h2>
     {% for note in page.notes %}
     {{ note | markdownify }}
-  {% endfor %}
-  {% endif %}
+    {% endfor %}
+    {% endif %}
   
-  {% if page.sources %}
+    {% if page.sources %}
     <h2>Sources</h2>
     <ul>
     {% for source in page.sources %}
@@ -148,9 +151,9 @@ layout: default
       </li>
     {% endfor %}
     </ul>
-  {% endif %}
+    {% endif %}
 
-  {% if page.attested-copies %}
+    {% if page.attested-copies %}
     <h2>Attested Copies</h2>
     <ul>
     {% for copy in page.attested-copies %}
@@ -159,7 +162,7 @@ layout: default
       </li>
     {% endfor %}
     </ul>
-  {% endif %}
+    {% endif %}
   </div>
 
 </article>

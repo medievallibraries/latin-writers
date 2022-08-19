@@ -17,6 +17,10 @@ layout: default
     <p>bibliographical ghost</p>
     {% endif %}
   
+    {% if page.sameAs %}
+    <p>= <a href="{{ page.sameAs.url }}">{{ page.sameAs.label | markdownify | remove: '<p>' | remove: '</p>' }}</a></p>
+    {% endif %}
+  
     {% if page.description %}
     {{ page.description | markdownify }}
     {% endif %}

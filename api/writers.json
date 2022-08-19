@@ -12,6 +12,7 @@ layout: none
       "british-career": {{- writer.british-career | jsonify }}
       "death": {{- writer.death | jsonify }}
       "description": {{- writer.description | jsonify }}
+      "sameAs": {{- writer.sameAs | jsonify }}
       "repertories": {{- writer.repertories | jsonify }}
       "bibliography": {{- writer.bibliography | jsonify }}
       "notes": {{- writer.notes | jsonify }}

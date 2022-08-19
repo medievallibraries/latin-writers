@@ -17,12 +17,15 @@ The data files are readable in any plain text editor. The data is structured in 
 identifier:    # unique identifier created using https://shortunique.id
 title:         # writer's name
 order:         # abbreviation for religious order (OSB, OSA, etc.)
-subtype:          # 'published' for a person whose works circulated in the Middle Ages under their name, rendered in small caps
+subtype:       # 'published' for a person whose works circulated in the Middle Ages under their name, rendered in small caps
                # 'ghost' for bibliographical ghosts, rendered in quotes
 not-british: true     # = for a writer mistakenly thought in the past to have British connections, marked †
 british-career: true  # = for a writer not born in British Isles but active there, marked ‡
 death:         # date of death
 description:   # short label shown before references
+sameAs:        # designating a ghost entry/attribution as being identical to another entity
+  label:           # name to be displayed
+  url:             # relevant link (for now to Mirabile)
 repertories:   # structured short references to repertories, formatted using `layouts/writer.html
   - BaleIndex:         # https://archive.org/details/mmanecdotaoxonie09oxfouoft
   - BaleCatalogus:     # https://catalog.hathitrust.org/Record/010824840
@@ -51,14 +54,17 @@ notes:
 identifier:          # unique identifier created using https://shortunique.id
 writer:              # identifer for the attributed writer
 title:               # work's name, assumed to be in Latin
-title-description:   # for an English descriptive name, rendered without italics
-subtype:                # 'attributed' for likely attributions to a writer, marked '(attrib.)'
+title-description:   # true for an English descriptive name, rendered without italics
+subtype:             # 'attributed' for likely attributions to a writer, marked '(attrib.)'
                      # 'spurious' for disproven attributions to a writer, rendered in quotes
 description:   # short label shown before references
 date-published:      # date (not structured)
 alternative-titles:  # other names by which the work is known
   - "Title 1"
   - "Title 2"
+sameAs:              # designating a ghost entry/attribution as being identical to another entity
+  label:                 # name to be displayed
+  url:                   # relevant link (for now to Mirabile)
 incipits:            # 'text' is mandatory and gives opening words; 'type' is optional, where there are multiple incipits
   - text: "Incipit 1"
     type: "prologue"

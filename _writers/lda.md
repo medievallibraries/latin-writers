@@ -2,7 +2,9 @@
 identifier: lda
 subtype: ghost    # = name in quotes
 title: Adalbert of Spalding
-same-as: https://www.wikidata.org/wiki/Q85511864
+sameAs:          # do these need to be separate entries?
+  label: "Adalbert of Metz, *Speculum Gregorii*"
+  url: https://www.mirabileweb.it/title/-/241
 repertories:
   - BaleIndex: 2–3
   - BaleCatalogus: 1. 205–206
