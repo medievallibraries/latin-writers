@@ -9,8 +9,9 @@ editions:
   - "R. B. Thomson, 'Two astronomical tractates of Abbo of Fleury', *The Light of Nature. Essays presented to A. C. Crombie* (Dordrecht 1985), 113–133 (text, 120–33). Thomson includes the diagrams and untitled paragraphs that follow in some copies."
   - "Baker & Lapidge<!--,  PAGES ??? -->."
 repertories:
-  - eTK: 1530B
-  - eTK: 0370G
+  - eTK:
+    - 1530B
+    - 0370G
   - Mirabile: 14920
 sources:
   - "Baltimore, Walters Art Gallery, MS W. 73 (s. xii², England), fols. 5v–6r, 4r–v."
