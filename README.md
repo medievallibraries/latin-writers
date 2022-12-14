@@ -83,7 +83,7 @@ repertories:        # structured short references to repertories, formatted usin
   - CPL:                # Clavis Patrum Latinorum
   - ICL:                # Initia carminum Latinorum
   - Mirabile:           # https://www.mirabileweb.it
-  - ThorndikeKibre:     # http://cctr1.umkc.edu/cgi-bin/medievalacademy
+  - eTK:                # http://cctr1.umkc.edu/cgi-bin/medievalacademy
   - WIC:                # Walther, Initia carminum
 notes:
   "Free text."

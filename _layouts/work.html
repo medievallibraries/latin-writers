@@ -117,15 +117,16 @@ layout: default
     </a>
 
     {% elsif repertory.Mirabile %}
-    <a href="https://www.mirabileweb.it/title/-/{{repertory.Mirabile }}">
+    <a href="https://www.mirabileweb.it/title/-/{{ repertory.Mirabile }}">
     Mirabile, title
     {{repertory.Mirabile }}
     </a>
     
-    {% elsif repertory.ThorndikeKibre %}
-    <a href="http://cctr1.umkc.edu/cgi-bin/medievalacademy">
-    Thorndike/Kibre</a>
-    {{ repertory.ThorndikeKibre }}
+    {% elsif repertory.eTK %}
+    <a href="https://cctr1.umkc.edu/find/$db=eTK&amp;ms={{ repertory.eTK }}">
+    eTK
+    {{ repertory.eTK }}
+	</a>
         
     {% else %}
     {{ repertory }}

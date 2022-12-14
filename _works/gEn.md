@@ -6,7 +6,7 @@ incipits:
   - text: Denique, ut dicit Plinius, inter omnia sunt LXXII signa
 editions: unpr.
 repertories:
-  - ThorndikeKibre: 400
+  - eTK: 0400N
   - Mirabile: 23023
 sources:
   - "Brussels, Bibliothèque Royale, MS 2194–5 (cat. 1355) (s. xii), fols. 49v–52r"

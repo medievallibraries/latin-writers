@@ -145,11 +145,11 @@ layout: none
                      <idno>{{repertory.Mirabile }}</idno>
                   </ref></bibl>
                   
-                  {% elsif repertory.ThorndikeKibre %}
-                  <bibl type="ThorndikeKibre"><ref target="http://cctr1.umkc.edu/cgi-bin/medievalacademy">
-                     Thorndike/Kibre</ref>
-                     <idno>{{ repertory.ThorndikeKibre }}</idno>
-                  </bibl>
+                  {% elsif repertory.eTK %}
+                  <bibl type="eTK"><ref target="https://cctr1.umkc.edu/find/$db=eTK&amp;ms={{ repertory.eTK }}">
+                     eTK
+                     <idno>{{ repertory.eTK }}</idno>
+                  </ref></bibl>
                   
                   {% else %}
                   <bibl>{{ repertory }}</bibl>
